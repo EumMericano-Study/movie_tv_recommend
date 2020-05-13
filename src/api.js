@@ -37,13 +37,13 @@ export const moviesApi = {
   upcoming: () => api.get("movie/upcoming", key_lan),
   popular: () => api.get("movie/popular", key_lan),
   movieDetail: id => api.get(`movie/${id}`, key_lan_videos),
-  search: term => api.get(`search/movie/${term}`, key_lan_search(term)),
+  search: term => api.get(`search/movie?${term}`, key_lan_search(term)),
 };
 
 export const tvApi = {
   topRated: () => api.get("tv/top_rated", key_lan),
-  popular: () => api.get("tv/top_rated", key_lan),
+  popular: () => api.get("tv/popular", key_lan),
   airingToday: () => api.get("tv/airing_today", key_lan),
   showDetail: id => api.get(`tv/${id}`, key_lan_videos),
-  search: term => api.get(`search/tv/${term}`, key_lan_search(term)),
+  search: term => api.get(`search/tv?${term}`, key_lan_search(term)),
 };
